@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .menu {
+      float:left;
+      width:20%;
+      text-align:center;
+    }
+    .menu a {
+      background-color:Violet;
+      padding:8px;
+      margin-top:7px;
+      display:block;
+      width:100%;
+      color:black;
+    }
+    .main {
+      float:left;
+      width:60%;
+      padding:0 20px;
+    }
+    .fixed-header, .fixed-footer{
+            width: 100%;
+            position: fixed;
+            background: #333;
+            padding: 10px 0;
+            color: #fff;
+            text-align:center
+        }
+        .fixed-header{
+        top: 0;
+    }
+        .fixed-footer{
+            bottom: 0;
+        }
+    .right {
+      background-color:#e5e5e5;
+      float:left;
+      width:20%;
+      padding:15px;
+      margin-top:7px;
+      text-align:center;
+    }
+
+    @media only screen and (max-width:620px) {
+      /* For mobile phones: */
+      .menu, .main, .right {
+        width:100%;
+      }
+    }
+    </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+<body style="font-family:Verdana;color:#000000;">
+
+  <div style="background-color:Tomato;padding:15px;text-align:center;">
+    <h1>Listed Topics are : {{topics}} </h1>
+
+  </div>
+
+  <div style="overflow:auto">
+    <div class="menu">
+    <ul>
+      {% for topic in topics%}
+  <ol><a href="{% url 'javasikhoApp:Learn' topic %}">Learn {{topic}} </a></ol>
+  {%endfor%}
+</ul>
+</div>
+</div>
+   <div class="fixed-footer">
+       <div class="container">Copyright Type Anything</div>
+   </div>
+
+</body>
+</html>

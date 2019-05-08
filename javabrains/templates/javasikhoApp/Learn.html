@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+    <body>
+
+      {% if topics %}
+
+      <ol>
+<h1> Topics Info </h1>
+
+         {% for Subj in topics %}
+
+         <ul>
+
+           <li>{{Subj.Sub}} : {{Subj.Title}} :<a href = {{Subj.Link}}>{{Subj.Link}}</a></li>
+
+
+
+        </ul>
+        {% endfor %}
+
+      </ol>
+      {% endif %}
+    </body>
+
+</html>
